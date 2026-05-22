@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồ án Trực quan hóa dữ liệu thời tiết</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f0f2f5; color: #333; }
+        .container { max-width: 1100px; margin: auto; }
+        .chart-card { background: white; margin-bottom: 30px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        h2 { border-left: 5px solid #e74c3c; padding-left: 15px; margin-bottom: 25px; font-size: 1.4rem; }
+        
+        /* Tooltip style */
+        .tooltip { position: absolute; padding: 10px; background: rgba(255, 255, 255, 0.95); border: 1px solid #ddd; 
+                   border-radius: 5px; pointer-events: none; opacity: 0; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10; }
+        
+        /* Chart Elements */
+        .line { fill: none; stroke-width: 3; }
+        .axis-label { font-size: 12px; fill: #666; font-weight: bold; }
+        .bar:hover { filter: brightness(0.8); transition: 0.2s; }
+        .legend-item { display: inline-block; margin-right: 20px; font-size: 13px; }
+        .legend-color { display: inline-block; width: 12px; height: 12px; margin-right: 5px; border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 40px;">BÁO CÁO PHÂN TÍCH DỮ LIỆU THỜI TIẾT</h1>
+
+        <!-- Task 1 -->
+        <div class="chart-card">
+            <h2>Task 1: Biến thiên nhiệt độ trung bình (Tháng 1 - Tháng 12)</h2>
+            <div id="task1"></div>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="chart-card">
+            <h2>Task 5: So sánh Nhiệt độ & Độ ẩm theo Địa hình</h2>
+            <div id="task5"></div>
+        </div>
+
+        <!-- Task 10 -->
+        <div class="chart-card">
+            <h2>Task 10: Mối tương quan giữa Chỉ số UV và Nhiệt độ</h2>
+            <div id="task10"></div>
+            <div style="text-align: center; margin-top: 10px;">
+                <span class="legend-item"><span class="legend-color" style="background: #e74c3c;"></span> Nhiệt độ (°C)</span>
+                <span class="legend-item"><span class="legend-color" style="background: #3498db;"></span> Chỉ số UV</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- Link tới file script -->
+    <script src="script.js"></script>
+</body>
+</html>
